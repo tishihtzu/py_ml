@@ -4,14 +4,15 @@ services:
     container_name: jupyter
     restart: unless-stopped
 
+    # Docker Stacks adjusts jovyan's identity, then drops privileges.
     user: root
 
     ports:
       - "127.0.0.1:8888:8888"
 
     environment:
-      NB_UID: "501"
-      NB_GID: "20"
+      NB_UID: "${NB_UID:-1000}"
+      NB_GID: "${NB_GID:-1000}"
       CHOWN_HOME: "yes"
       KERAS_BACKEND: tensorflow
 

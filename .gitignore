@@ -1,0 +1,87 @@
+# Local environment configuration
+.env
+.env.*
+!.env.example
+
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.pyright/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+.jupyter/
+.local/share/jupyter/runtime/
+
+# Python build artifacts
+build/
+dist/
+*.egg-info/
+
+# Coverage
+.coverage
+.coverage.*
+htmlcov/
+
+# IDE and editor state
+.vscode/
+.idea/
+*.sublime-workspace
+*.swp
+*.swo
+*~
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp
+tmp/
+temp/
+
+# ML datasets and generated artifacts
+data/raw/
+data/cache/
+datasets/
+checkpoints/
+runs/
+wandb/
+mlruns/
+tensorboard/
+lightning_logs/
+
+# Model files
+*.pt
+*.pth
+*.ckpt
+*.h5
+*.hdf5
+*.keras
+*.onnx
+*.safetensors
+*.gguf
+*.tflite
+
+# Local secrets and credentials
+*.pem
+*.key
+credentials.json
+secrets.json
+
+# Keep small, intentional test fixtures trackable.
+!tests/fixtures/
+!tests/fixtures/**/
+!tests/fixtures/**
