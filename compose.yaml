@@ -1,0 +1,25 @@
+services:
+  jupyter:
+    build: .
+    container_name: jupyter
+    restart: unless-stopped
+
+    user: root
+
+    ports:
+      - "127.0.0.1:8888:8888"
+
+    environment:
+      NB_UID: "501"
+      NB_GID: "20"
+      CHOWN_HOME: "yes"
+      KERAS_BACKEND: tensorflow
+
+    volumes:
+      - "${NOTEBOOK_DIR:-${HOME}/wrk}:/home/jovyan/work"
+
+    command:
+      - start-notebook.py
+      - --ServerApp.root_dir=/home/jovyan/work
+      - --ServerApp.token=
+      - --ServerApp.password=
